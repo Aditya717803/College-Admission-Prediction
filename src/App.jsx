@@ -1,19 +1,40 @@
-import './App.css'
-import Table from './component/Table.jsx'
-import Navbar from './component/Navbar.jsx'
+import './App.css';
+import Navbar from './component/Navbar';
+import Hero from './component/Hero';
+import Features from './component/feature';
+import Login from './component/Login';
+import Dashboard from './component/Dashboard';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProtectedRoute from './component/PasswordProtected'; // Import the protected route component
 
 function App() {
-
   return (
-  <div className = "bg-black">
-        <div className = "container mx-auto p-6">
-          <Navbar/>
-        </div>
-         {/* <div className = "container mx-auto p-6">
-         <Table/>
-    </div> */}
-  </div>
-  ) 
+    <Router>
+      <div className="min-h-screen bg-black text-white">
+        <Routes>
+          
+          {/* Landing Page Route */}
+          <Route path="/" element={
+            <>
+              <Navbar />
+              <Hero />
+              <Features />
+              <Login/>
+            </>
+          } />
+
+          {/* Login Route */}
+          <Route path="/login" element={<Login />} />
+
+          {/* Protected Dashboard Route */}
+          <Route
+            path="/dashboard/*" // Adding '*' here in case there are nested routes
+            element={<ProtectedRoute element={<Dashboard />} />}
+          />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

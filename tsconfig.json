@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "baseUrl": "src",  // Ensures the alias @ resolves to the src directory
+      "paths": {
+        "@/*": ["*"]
+      }
+    }
+  }
+  

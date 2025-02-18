@@ -1,0 +1,24 @@
+.glow-text {
+    text-shadow: 
+      0 0 3px rgba(138, 43, 226, 0.2),   /* Less blur and opacity */
+      0 0 6px rgba(138, 43, 226, 0.2), 
+      0 0 9px rgba(138, 43, 226, 0.2), 
+      0 0 12px rgba(138, 43, 226, 0.3);  /* Softer glow */
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 0px rgba(138, 43, 226, 0.2), 0 0 15px rgba(138, 43, 226, 0.2);
+    
+  }
+  
+  .glow-border:hover {
+    box-shadow: 0 0 10px rgba(138, 43, 226, 1), 0 0 20px rgba(138, 43, 226, 1);
+  }
+
+  .custom-line {
+    border: 0;
+    border-top: 2px solid #8a2be2; /* Purple line */
+    width: 80%; /* Adjust the width */
+    margin: 20px auto; /* Centers the line and adds margin */
+  }
+  
